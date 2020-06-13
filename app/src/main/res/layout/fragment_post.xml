@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/top_bar_normal_bg"
+        android:layout_width="match_parent"
+        android:layout_height="46dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="朋友圈"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+
+    <EditText
+            android:id="@+id/et_post"
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:background="#ffffff"
+            android:inputType="textLongMessage|textMultiLine"
+
+            android:text="输入内容">
+
+    </EditText>
+
+    <ListView
+        android:id="@+id/lv_postlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+
+    <Button
+        android:id="@+id/bt_post_publish"
+        android:text="发布"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        />
+    </RelativeLayout>
+
+    <!--
+    <ScrollView
+        android:id="@+id/lv_pyqs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/name1"
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="test"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/message1"
+                    android:layout_width="175dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="test"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+-->
+
+
+</LinearLayout>

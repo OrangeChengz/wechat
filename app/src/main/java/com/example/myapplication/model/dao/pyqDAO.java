@@ -4,9 +4,6 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.myapplication.model.bean.GroupInfo;
-import com.example.myapplication.model.bean.InviterInfo;
-import com.example.myapplication.model.bean.UserInfo;
 import com.example.myapplication.model.bean.pyqInfo;
 import com.example.myapplication.model.db.DBHelper;
 
@@ -19,6 +16,8 @@ public class pyqDAO {
     public pyqDAO(DBHelper dbHelper) {
         mHelper=dbHelper;
     }
+
+
     //添加一条朋友圈
     public void addpyq(pyqInfo pyqinfo){
         SQLiteDatabase db = mHelper.getReadableDatabase();
@@ -35,7 +34,7 @@ public class pyqDAO {
 
         List<pyqInfo> pyqsInfo=new ArrayList<>();
         while(cursor.moveToNext()){
-            pyqInfo pyqInfo=new pyqInfo();
+            pyqInfo pyqInfo=new pyqInfo( );
             String name=new String();
             String message=new String();
             name=cursor.getString(cursor.getColumnIndex(pyqTable.COL_NAME));

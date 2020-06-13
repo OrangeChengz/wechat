@@ -9,7 +9,7 @@ import com.example.myapplication.model.bean.UserInfo;
 import com.example.myapplication.model.db.UserAccountDB;
 
 //操作類
-public class UserAccountDAO {
+public class  UserAccountDAO {
     private final UserAccountDB mHelper;
 
     public UserAccountDAO(Context context) {
