@@ -66,7 +66,7 @@ public class PostListAdapter extends BaseAdapter {
         pyqInfo pyqinfo = mPyqinfos.get(position);
         //展示数据
         hodler.username.setText(pyqinfo.getName());
-        hodler.username.setText(pyqinfo.getMessage());
+        hodler.message.setText(pyqinfo.getMessage());
 
         //返回数据
         return convertView;

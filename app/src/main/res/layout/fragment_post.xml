@@ -22,40 +22,39 @@
     </RelativeLayout>
 
 
-
     <EditText
-            android:id="@+id/et_post"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:background="#ffffff"
-            android:inputType="textLongMessage|textMultiLine"
+        android:id="@+id/et_post"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:background="#ffffff"
+        android:inputType="textLongMessage|textMultiLine"
 
-            android:text="输入内容">
+        >
 
     </EditText>
 
     <ListView
         android:id="@+id/lv_postlist"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="380dp">
 
     </ListView>
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
 
-    <Button
-        android:id="@+id/bt_post_publish"
-        android:text="发布"
-        android:textSize="20sp"
-        android:textColor="@android:color/white"
-        android:textAllCaps="false"
-        android:background="@android:color/darker_gray"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        />
+        <Button
+            android:id="@+id/bt_post_publish"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/darker_gray"
+            android:text="发布"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <!--

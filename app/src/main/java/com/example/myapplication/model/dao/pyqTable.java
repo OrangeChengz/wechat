@@ -6,6 +6,6 @@ public class pyqTable {
     public static final String COL_MASSAGE = "message";
     public static final String CREATE_TABLE= "create table "
             + TAB_NAME + " ("
-            +COL_NAME +" text primary kry,"
+            +COL_NAME +" text primary key,"
             +COL_MASSAGE + " text);";
 }

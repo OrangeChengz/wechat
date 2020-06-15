@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +20,7 @@ import com.example.myapplication.model.Model;
 import com.example.myapplication.model.bean.pyqInfo;
 import com.hyphenate.chat.EMClient;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //朋友圈
@@ -29,7 +31,7 @@ public class PostFragment extends Fragment {
     private TextView tv_name1;
     private TextView tv_message1;
 
-    //private ArrayList<pyqInfo> pyqInfoList = new ArrayList<>();
+    private List<pyqInfo> pyqInfoList = new ArrayList<>();
     private PostListAdapter postlistadapter;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = View.inflate(getActivity(),R.layout.fragment_post,null);
@@ -54,7 +56,7 @@ public class PostFragment extends Fragment {
             @Override
             public void run() {
                 //获取数据
-                List<pyqInfo> pyqInfoList = Model.getInstance().getDbManager().getPyqTableDao().getpyqs();
+                //List<pyqInfo> pyqInfoList = Model.getInstance().getDbManager().getPyqTableDao().getpyqs();
                 //更新页面
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
@@ -76,7 +78,7 @@ public class PostFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        //initData1();
+        initData1();
     }
 
     private void initData1(){
@@ -90,21 +92,24 @@ public class PostFragment extends Fragment {
                     public void run() {
                         //获取朋友圈内容
                         String message = et_post.getText().toString();
+                        if(message.trim().isEmpty())
+                            return;
                         String name = EMClient.getInstance().getCurrentUser();
                         pyqInfo pyq = new pyqInfo(name,message);
-
-                        Model.getInstance().getDbManager().getPyqTableDao().addpyq(pyq);
-
+                        //Model.getInstance().getDbManager().getPyqTableDao().addpyq(pyq);
+                        pyqInfoList.add(pyq);
                         //更新页面
-                        postlistadapter.refresh(Model.getInstance().getDbManager().getPyqTableDao().getpyqs());
-                        /*
+                        //postlistadapter.refresh(Model.getInstance().getDbManager().getPyqTableDao().getpyqs());
+
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                //Toast.makeText(getActivity(),"发布成功",Toast.LENGTH_SHORT).show();
+                                postlistadapter.refresh(pyqInfoList);
+                                et_post.setText("");
+                                Toast.makeText(getActivity(),"发布成功",Toast.LENGTH_SHORT).show();
 
                             }
-                        });*/
+                        });
                     }
                 });
             }
